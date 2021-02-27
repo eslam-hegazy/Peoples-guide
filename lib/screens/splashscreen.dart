@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:newsapp/Auth/login.dart';
 
 import 'main_screen.dart';
 
@@ -18,7 +19,7 @@ class _splashscreenState extends State<splashscreen> {
     super.initState();
     Timer(Duration(seconds: 4), () {
       Navigator.push(context, MaterialPageRoute(builder: (_) {
-        return MainScreen();
+        return login();
       }));
     });
   }

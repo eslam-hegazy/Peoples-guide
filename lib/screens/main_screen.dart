@@ -1,5 +1,7 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:newsapp/Auth/login.dart';
 import 'package:newsapp/bloc/bottom_navbar_bloc.dart';
 import 'package:newsapp/style/theme.dart' as Style;
 
@@ -30,9 +32,25 @@ class _MainScreenState extends State<MainScreen> {
           centerTitle: true,
           backgroundColor: Color(0xFF242526),
           title: Text(
-            "NewsApp",
-            style: TextStyle(color: Colors.white),
+            "News App",
+            style: TextStyle(color: Colors.white, fontFamily: "Courgette"),
           ),
+          leading: Icon(Icons.add, color: Color(0xFF242526)),
+          actions: [
+            Padding(
+              padding: EdgeInsets.all(10),
+              child: InkWell(
+                child: Icon(Icons.logout),
+                onTap: () async {
+                  await FirebaseAuth.instance.signOut();
+                  Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (_) {
+                    return login();
+                  }));
+                },
+              ),
+            ),
+          ],
         ),
       ),
       body: SafeArea(

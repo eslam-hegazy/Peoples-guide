@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "299524315324",
+    "project_id": "starry-diode-303307",
+    "storage_bucket": "starry-diode-303307.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299524315324:android:b94bf91efcab3df02d58b9",
+        "android_client_info": {
+          "package_name": "com.example.newsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299524315324-jamt6epbu47bml97qcpfpls861iood61.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEcOpMFvSacZCBCEn_T5SWlnUJNonDEB4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299524315324-jamt6epbu47bml97qcpfpls861iood61.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
