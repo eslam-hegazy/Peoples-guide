@@ -61,7 +61,7 @@ class _loginState extends State<login> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(height: 36),
+                    SizedBox(height: 55),
                     Card(
                       borderOnForeground: true,
                       elevation: 6,
@@ -135,10 +135,10 @@ class _loginState extends State<login> {
                               password: password.text,
                             );
                             if (result != null) {
-                              Navigator.pushReplacement(context,
-                                  MaterialPageRoute(builder: (_) {
-                                return splashscreen();
-                              }));
+                              Navigator.of(context).pushAndRemoveUntil(
+                                  MaterialPageRoute(
+                                      builder: (c) => MainScreen()),
+                                  (route) => false);
                             } else {
                               print("Not Found");
                             }
@@ -154,7 +154,7 @@ class _loginState extends State<login> {
                             color: Colors.blue, fontFamily: "Courgette"),
                       ),
                     ),
-                    SizedBox(height: 20),
+                    SizedBox(height: 50),
                     Align(
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -162,7 +162,13 @@ class _loginState extends State<login> {
                           FloatingActionButton(
                             heroTag: null,
                             child: Image.asset("assets/facebook.png"),
-                            onPressed: () async {},
+                            onPressed: () async {
+                              await _handleSignIn();
+                              Navigator.of(context).pushAndRemoveUntil(
+                                  MaterialPageRoute(
+                                      builder: (c) => MainScreen()),
+                                  (route) => false);
+                            },
                           ),
                           SizedBox(width: 20),
                           FloatingActionButton(
@@ -170,10 +176,10 @@ class _loginState extends State<login> {
                             child: Image.asset("assets/google.png"),
                             onPressed: () async {
                               await _handleSignIn();
-                              Navigator.pushReplacement(context,
-                                  MaterialPageRoute(builder: (_) {
-                                return MainScreen();
-                              }));
+                              Navigator.of(context).pushAndRemoveUntil(
+                                  MaterialPageRoute(
+                                      builder: (c) => MainScreen()),
+                                  (route) => false);
                             },
                           ),
                         ],

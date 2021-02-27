@@ -5,8 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:newsapp/Auth/login.dart';
 
-import 'main_screen.dart';
-
 class splashscreen extends StatefulWidget {
   @override
   _splashscreenState createState() => _splashscreenState();

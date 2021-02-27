@@ -148,7 +148,7 @@ class _RegisterState extends State<Register> {
                         },
                       ),
                     ),
-                    SizedBox(height: 15),
+                    SizedBox(height: 25),
                     Align(
                       alignment: Alignment.center,
                       child: InkWell(
@@ -160,10 +160,10 @@ class _RegisterState extends State<Register> {
                               password: password.text,
                             );
                             if (result != null) {
-                              Navigator.pushReplacement(context,
-                                  MaterialPageRoute(builder: (_) {
-                                return MainScreen();
-                              }));
+                              Navigator.of(context).pushAndRemoveUntil(
+                                  MaterialPageRoute(
+                                      builder: (c) => MainScreen()),
+                                  (route) => false);
                               print("sucess");
                             } else {
                               print("erorr");
@@ -190,7 +190,7 @@ class _RegisterState extends State<Register> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 15),
+                    SizedBox(height: 25),
                     Align(
                       child: SingleChildScrollView(
                         child: Row(
